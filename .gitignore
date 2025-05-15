@@ -1,0 +1,9 @@
+# Ignora la carpeta Files
+Files
+
+#para descartar todos los archivos dentro de la carpeta File
+Files/*
+
+# Ignora todos los archivos de texto
+*.txt
+

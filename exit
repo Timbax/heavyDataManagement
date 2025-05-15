@@ -1,0 +1,61 @@
+[33mcommit d9e0d4b5061fc7ace4e91cd4264309ae7fea0e5b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m)[m
+Author: Daniel Perez <danielrx-8@hotmail.com>
+Date:   Mon May 12 18:13:40 2025 -0500
+
+    Commit4
+
+[33mcommit 60777c4fd505ef6036805eeb96c29176cd3321c7[m
+Author: Daniel Perez <danielrx-8@hotmail.com>
+Date:   Mon May 12 18:10:34 2025 -0500
+
+    Commit4
+
+[33mcommit df7f902bf43319198638f13d84a432ebb46882c5[m
+Author: Daniel Perez <danielrx-8@hotmail.com>
+Date:   Mon May 12 17:56:46 2025 -0500
+
+    Commit 2
+    
+    Commit 2
+
+[33mcommit c62cabb17efd992a41c8d7b83acc20d1a4374107[m
+Author: Daniel Perez <danielrx-8@hotmail.com>
+Date:   Mon May 12 17:36:35 2025 -0500
+
+    without heavy file
+
+[33mcommit 4867ab2fd6954ff78bbb5d46648289e46dbcf924[m
+Author: Daniel Perez <danielrx-8@hotmail.com>
+Date:   Mon May 12 17:26:23 2025 -0500
+
+    .gitignore dosen't work yet
+
+[33mcommit 02574eb82537208378cf8700cca8325ecd15aad0[m
+Author: Daniel Perez <danielrx-8@hotmail.com>
+Date:   Mon May 12 17:22:47 2025 -0500
+
+    .gitignore working!
+
+[33mcommit 5ee7209dc0d221ea21184c59544e3f5e265b9ad6[m
+Author: Daniel Perez <danielrx-8@hotmail.com>
+Date:   Mon May 12 17:16:53 2025 -0500
+
+    Changes 2
+
+[33mcommit 61ad5593fba6de9092779ad1ae971b45aa6f3f04[m
+Author: Daniel Perez <danielrx-8@hotmail.com>
+Date:   Mon May 12 17:15:40 2025 -0500
+
+    Changes
+
+[33mcommit 8936efdec2385097b868f4e11b1e16e2aeb5c117[m
+Author: Daniel Perez <danielrx-8@hotmail.com>
+Date:   Mon May 12 17:12:01 2025 -0500
+
+    First Commit: read the file and incomplete connection to Mysql DB
+
+[33mcommit 20190896431c8e0eb9088058c72d2dea9bcf67aa[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Daniel Perez <danielrx-8@hotmail.com>
+Date:   Mon May 12 15:19:19 2025 -0500
+
+    Initial commit
