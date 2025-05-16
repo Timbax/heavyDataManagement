@@ -50,3 +50,14 @@ def create_table_mysql_db(connection_Mysql_param, table_name_param, table_column
         print(f"Proceso: La tabla {table_name_param} ya existe.")
 
     return
+
+def insert_data_mysql_db(connection_Mysql_param, table_name_param, table_columns_param):
+    mysql_cursor = connection_Mysql_param.cursor()
+
+    data_columns = table_columns_param
+    result = mysql_cursor.fetchone()
+    if(result is None):
+         print("Error")
+         
+     
+    return
