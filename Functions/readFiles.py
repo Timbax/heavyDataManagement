@@ -12,7 +12,7 @@ def read_heavy_file():
         )
 
         print("Proceso: Archivo leido correctamente!")
-        heavy_data_50 = heavy_data.head(50)
+        heavy_data_50 = heavy_data.head(20)
         print("Proceso: primeros 50 registros obtenidos")
 
         #heavy_data_columns = heavy_data.columns
