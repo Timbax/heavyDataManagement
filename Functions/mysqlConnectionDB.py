@@ -53,8 +53,8 @@ def create_table_mysql_db(connection_Mysql_param, table_name_param, table_column
 
 def insert_data_mysql_db(connection_Mysql_param, table_name_param, df_columns_param, df_for_insert_mysql_param):
     mysql_cursor = connection_Mysql_param.cursor()
-    #print("Proceso: datos del data frame: ",df_for_insert_mysql_param)
-    #print("Proceso: tipo de dato de df_for_insert_mysql_param : ",type(df_for_insert_mysql_param))
+    print("Proceso: datos del data frame: ",df_for_insert_mysql_param)
+    print("Proceso: tipo de dato de df_for_insert_mysql_param : ",type(df_for_insert_mysql_param))
     try:
 
         data_columns_into_str = df_columns_param
