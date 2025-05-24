@@ -19,7 +19,7 @@ def mysql_db_connection():
         ) 
 
         if conectionMySQL.is_connected():
-            print("Proceso: Conexión exitosa a la base de datos!")
+            print("Proceso: Conexión exitosa a la base de datos.")
 
     except Error as e:
             print(f"Proceso: Error al conectar con MySQL: {e}")
@@ -97,5 +97,15 @@ def insert_data_mysql_db(connection_Mysql_param, table_name_param, df_columns_pa
     
     return print(f'Proceso: Datos insertados correctamente en la tabla {table_name_param}.\nTotal de inserciones procesadas: {len(df_for_insert_mysql_param)} ')
     
-         
+def close_mysql_connection(connection_Mysql_param):
+    
+    try:
+        if connection_Mysql_param.is_connected():
+                connection_Mysql_param.close()
+
+    except Error as e:
+
+        print(f"Error al cerrar conexion de MySQL: {e}")
+        return None         
+    return(print("Proceso: Conexión a la base de datos cerrada."))  
      
