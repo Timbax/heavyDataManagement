@@ -1,5 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
+import pandas as pd
 
 def mysql_db_connection():
     host = "localhost"
@@ -53,39 +54,48 @@ def create_table_mysql_db(connection_Mysql_param, table_name_param, table_column
 
 def insert_data_mysql_db(connection_Mysql_param, table_name_param, df_columns_param, df_for_insert_mysql_param):
     mysql_cursor = connection_Mysql_param.cursor()
-    print("Proceso: datos del data frame: ",df_for_insert_mysql_param)
-    print("Proceso: tipo de dato de df_for_insert_mysql_param : ",type(df_for_insert_mysql_param))
+    
     try:
 
         data_columns_into_str = df_columns_param
+        # Obtiene los nombres de todas las columnas del DataFrame
         data_columns_into_str = ", ".join(df_columns_param) # ", ".join(...) - Une todos los elementos de la lista con una coma y un espacio entre ellos.
 
-        #print("Proceso: contenido de data_transformed_str: ",data_transformed_str)
-        #print("Proceso: Tipo de variable de data_transformed_str: ",type(data_transformed_str))
         
-        for _, row_clean_data in df_for_insert_mysql_param.iterrows():
-            clean_and_transform_data = row_clean_data
-        
-        clean_and_transform_data.to_list()
-        
-        print("Proceso: contenido de la varible clean_and_transform_data: ",clean_and_transform_data)
-        print("Proceso: Tipo de variable de transform_data: ",type(clean_and_transform_data))
+        for _, row in df_for_insert_mysql_param.iterrows():
+            # RECUERDA: iterrows() se utiliza para iterar o recorrer sobre las filas de un DataFrame. (FILAS - ) y (COLUMNAS | )
+            # El for_, hace referencia a que el for debe de ignorar el inide de la de la fila. 
+           
+            df_values = []
+            for column in df_for_insert_mysql_param.columns:
+                # row[column]: obtiene el valor específico de esa columna en la fila actual
+                # f'"{row[column]}"': Encierra el valor entre comillas dobles
+                # df_values.append(): Agrega cada valor con comillas a la lista llamada "df_values"
+
+                if pd.isna(row[column]) or str(row[column]).strip() == "":
+                    df_values.append("NULL")
+                else:
+                    df_values.append(f'"{row[column]}"')         
+            
+            row_data_str = ", ".join(df_values)
+            # Toma la lista df_values con todos los valores entre comillas
+            # Los une con comas y espacios
+
+            insert_mysql_data = f'''
+                INSERT INTO {table_name_param}({data_columns_into_str}) VALUES ({row_data_str})
+            '''
+
+            #print("Proceso: insert script: ",insert_mysql_data)
        
-
+            mysql_cursor.execute(insert_mysql_data)
+            connection_Mysql_param.commit()
         
-        insert_mysql_data = f'''
-            INSERT INTO {table_name_param}({data_columns_into_str}) VALUES ({clean_and_transform_data})
-        '''
-
-        print("Proceso: insert script: ",insert_mysql_data)
-        #print("Proceso: contenido de data_value : ",data_values)
-        #mysql_cursor.execute(insert_mysql_data)
-        #connection_Mysql_param.commit()
+        
     except Error as e:
         print(f"Proceso: Error al conectar con MySQL: {e}")
         return None
     
-    return (print("Proceso: Datos insertados correctamente en la tabla."))
+    return print(f'Proceso: Datos insertados correctamente en la tabla {table_name_param}.\nTotal de inserciones procesadas: {len(df_for_insert_mysql_param)} ')
     
          
      
